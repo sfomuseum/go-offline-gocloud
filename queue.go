@@ -2,6 +2,7 @@ package gocloud
 
 import (
 	_ "gocloud.dev/pubsub/mempubsub"
+	_ "gocloud.dev/pubsub/awssnssqs"
 )
 
 import (
