@@ -3,14 +3,14 @@ module github.com/sfomuseum/go-offline-gocloud
 go 1.19
 
 require (
-	github.com/aaronland/go-aws-dynamodb v0.0.4
-	github.com/aaronland/go-aws-session v0.0.6
+	github.com/aaronland/go-aws-dynamodb v0.0.5
 	github.com/aws/aws-sdk-go v1.44.134
 	github.com/sfomuseum/go-offline v0.0.0-20221109194136-4aed06613088
 	gocloud.dev v0.27.0
 )
 
 require (
+	github.com/aaronland/go-aws-session v0.0.6 // indirect
 	github.com/aaronland/go-http-sanitize v0.0.6 // indirect
 	github.com/aaronland/go-http-server v1.0.0 // indirect
 	github.com/aaronland/go-roster v1.0.0 // indirect

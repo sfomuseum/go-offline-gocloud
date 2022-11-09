@@ -7,9 +7,9 @@ import (
 import (
 	"context"
 	"fmt"
+	aa_dynamodb "github.com/aaronland/go-aws-dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/sfomuseum/go-offline"
-	sfom_dynamodb "github.com/sfomuseum/go-offline-gocloud/dynamodb"
 	"gocloud.dev/docstore"
 	"gocloud.dev/docstore/awsdynamodb"
 	"io"
@@ -48,7 +48,7 @@ func NewDocstoreDatabase(ctx context.Context, uri string) (offline.Database, err
 
 	if db_u.Scheme == "awsdynamodb" {
 
-		sess, err := sfom_dynamodb.NewSessionWithURI(ctx, uri)
+		sess, err := aa_dynamodb.NewSessionWithURI(ctx, uri)
 
 		if err != nil {
 			return nil, fmt.Errorf("Failed to create session, %w", err)

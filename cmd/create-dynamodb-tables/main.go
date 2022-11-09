@@ -17,7 +17,7 @@ func main() {
 
 	ctx := context.Background()
 
-	client, err := sfom_dynamodb.NewClientWithURI(ctx, *client_uri)
+	client, err := aa_dynamodb.NewClientWithURI(ctx, *client_uri)
 
 	if err != nil {
 		log.Fatalf("Failed to create client, %v", err)
