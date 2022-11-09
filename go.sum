@@ -1239,8 +1239,8 @@ github.com/sfomuseum/go-flags v0.10.0 h1:1OC1ACxpWMsl3XQ9OeNVMQj7Zi2CzufP3Rym3mP
 github.com/sfomuseum/go-flags v0.10.0/go.mod h1:VXOnnX1/yxQpX2yiwHaBV6aCmhtszQOL5bL1/nNo3co=
 github.com/sfomuseum/go-http-auth v0.0.5 h1:+48kfI9LQpBsUpsSaBxNtrJYiyJpNkmDWL3+y2eNrzo=
 github.com/sfomuseum/go-http-auth v0.0.5/go.mod h1:rAWkkf9KlG9HhyLLOToiu4MqluH8HVE5Si03z0e6kb0=
-github.com/sfomuseum/go-offline v0.0.0-20221109194136-4aed06613088 h1:UpwQqxScPEwWvh3vvgRvaIHfJ3BZ2wc50DrZEZUNXck=
-github.com/sfomuseum/go-offline v0.0.0-20221109194136-4aed06613088/go.mod h1:MCqM/nCSlogNGcpkDdfw72dVu0JBd4NkC6+PlMPS04c=
+github.com/sfomuseum/go-offline v0.0.1 h1:hH1i3qUjwK3fC6R/YnhXR4RbtVfNdmMizKV1gRoNwns=
+github.com/sfomuseum/go-offline v0.0.1/go.mod h1:48HfdPy4TqDhvYweFMh19bFxKHuuo7cB/NCh65KPgw0=
 github.com/shopspring/decimal v0.0.0-20180709203117-cd690d0c9e24/go.mod h1:M+9NzErvs504Cn4c5DxATwIqPbtswREoFCre64PpcG4=
 github.com/shopspring/decimal v1.2.0/go.mod h1:DKyhrW/HYNuLGql+MJL6WCR6knT2jwCFRcu2hWCYk4o=
 github.com/shurcooL/httpfs v0.0.0-20190707220628-8d4bc4ba7749/go.mod h1:ZY1cvUeJuFPAdZ/B6v7RHavJWZn2YPVFQ1OSXhCGOkg=
