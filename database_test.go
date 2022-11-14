@@ -2,6 +2,7 @@ package gocloud
 
 import (
 	"context"
+	"encoding/json"
 	"github.com/sfomuseum/go-offline"
 	_ "gocloud.dev/docstore/memdocstore"
 	"sync/atomic"
@@ -26,7 +27,13 @@ func TestDocstoreDatabase(t *testing.T) {
 		"id":   1234,
 	}
 
-	job, err := offline.NewJob(ctx, instructions)
+	enc_instructions, err := json.Marshal(instructions)
+
+	if err != nil {
+		t.Fatalf("Failed to marshal instructions, %v", err)
+	}
+
+	job, err := offline.NewJob(ctx, string(enc_instructions))
 
 	if err != nil {
 		t.Fatalf("Failed to create new job, %v", err)
@@ -94,7 +101,13 @@ func TestPruneAndListJobs(t *testing.T) {
 
 	for i := 0; i < 5; i++ {
 
-		job, err := offline.NewJob(ctx, instructions)
+		enc_instructions, err := json.Marshal(instructions)
+
+		if err != nil {
+			t.Fatalf("Failed to marshal instructions, %v", err)
+		}
+
+		job, err := offline.NewJob(ctx, string(enc_instructions))
 
 		if err != nil {
 			t.Fatalf("Failed to create new job, %v", err)
