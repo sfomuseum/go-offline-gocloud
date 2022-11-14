@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/aaronland/go-http-server"
+	"github.com/rs/cors"
 	"github.com/sfomuseum/go-flags/flagset"
 	"github.com/sfomuseum/go-http-auth"
 	"github.com/sfomuseum/go-offline"
@@ -60,6 +61,21 @@ func RunWithOptions(ctx context.Context, opts *RunOptions) error {
 		return fmt.Errorf("Failed to create authenticator, %w", err)
 	}
 
+	var cors_wrapper *cors.Cors
+
+	if enable_cors {
+
+		if len(cors_origins) == 0 {
+			return fmt.Errorf("Missing allowed CORS origin hosts")
+		}
+
+		cors_wrapper = cors.New(cors.Options{
+			AllowedOrigins:   cors_origins,
+			AllowCredentials: cors_allow_credentials,
+		})
+
+	}
+
 	status_handler_opts := &api.JobStatusHandlerOptions{
 		Database:      offline_db,
 		Authenticator: authenticator,
@@ -67,6 +83,10 @@ func RunWithOptions(ctx context.Context, opts *RunOptions) error {
 
 	status_handler := api.JobStatusHandler(status_handler_opts)
 	status_handler = authenticator.WrapHandler(status_handler)
+
+	if enable_cors {
+		status_handler = cors_wrapper.Handler(status_handler)
+	}
 
 	mux := http.NewServeMux()
 

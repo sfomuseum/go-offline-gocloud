@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/aaronland/go-aws-dynamodb v0.0.5
 	github.com/aws/aws-sdk-go v1.44.134
-	github.com/sfomuseum/go-offline v0.0.1
+	github.com/sfomuseum/go-offline v0.0.5
 	gocloud.dev v0.27.0
 )
 
@@ -37,6 +37,7 @@ require (
 	github.com/google/wire v0.5.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.4.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
+	github.com/rs/cors v1.8.2 // indirect
 	github.com/sfomuseum/go-flags v0.10.0 // indirect
 	github.com/sfomuseum/go-http-auth v0.0.5 // indirect
 	github.com/whosonfirst/go-sanitize v0.1.0 // indirect
