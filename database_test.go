@@ -33,7 +33,7 @@ func TestDocstoreDatabase(t *testing.T) {
 		t.Fatalf("Failed to marshal instructions, %v", err)
 	}
 
-	job, err := offline.NewJob(ctx, string(enc_instructions))
+	job, err := offline.NewJob(ctx, "testing", string(enc_instructions))
 
 	if err != nil {
 		t.Fatalf("Failed to create new job, %v", err)
@@ -107,7 +107,7 @@ func TestPruneAndListJobs(t *testing.T) {
 			t.Fatalf("Failed to marshal instructions, %v", err)
 		}
 
-		job, err := offline.NewJob(ctx, string(enc_instructions))
+		job, err := offline.NewJob(ctx, "testing", string(enc_instructions))
 
 		if err != nil {
 			t.Fatalf("Failed to create new job, %v", err)
