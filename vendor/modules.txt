@@ -196,7 +196,7 @@ github.com/sfomuseum/go-flags/multi
 # github.com/sfomuseum/go-http-auth v0.0.5
 ## explicit; go 1.19
 github.com/sfomuseum/go-http-auth
-# github.com/sfomuseum/go-offline v0.0.8
+# github.com/sfomuseum/go-offline v0.0.9
 ## explicit; go 1.19
 github.com/sfomuseum/go-offline
 github.com/sfomuseum/go-offline/app/job/add
