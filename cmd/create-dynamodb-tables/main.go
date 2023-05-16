@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"flag"
-	aa_dynamodb "github.com/aaronland/go-aws-dynamodb"
-	sfom_dynamodb "github.com/sfomuseum/go-offline-gocloud/dynamodb"
 	"log"
+
+	aa_dynamodb "github.com/aaronland/go-aws-dynamodb"
+	sfom_dynamodb "github.com/sfomuseum/go-offline-gocloud/dynamodb"	
 )
 
 func main() {
