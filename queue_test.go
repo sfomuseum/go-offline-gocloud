@@ -2,8 +2,9 @@ package gocloud
 
 import (
 	"context"
-	"github.com/sfomuseum/go-offline"
 	"testing"
+
+	"github.com/sfomuseum/go-offline"	
 )
 
 func TestQueueJob(t *testing.T) {

@@ -2,12 +2,13 @@ package gocloud
 
 import (
 	"context"
-	"encoding/json"
-	"github.com/sfomuseum/go-offline"
-	_ "gocloud.dev/docstore/memdocstore"
 	"sync/atomic"
 	"testing"
 	"time"
+
+	"encoding/json"
+	"github.com/sfomuseum/go-offline"
+	_ "gocloud.dev/docstore/memdocstore"	
 )
 
 func TestDocstoreDatabase(t *testing.T) {

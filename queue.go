@@ -8,9 +8,10 @@ import (
 import (
 	"context"
 	"fmt"
-	"github.com/sfomuseum/go-offline"
-	"gocloud.dev/pubsub"
 	"strconv"
+
+	"github.com/sfomuseum/go-offline"
+	"gocloud.dev/pubsub"	
 )
 
 type PubSubQueue struct {

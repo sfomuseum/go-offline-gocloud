@@ -7,14 +7,15 @@ import (
 import (
 	"context"
 	"fmt"
+	"io"
+	"net/url"
+	"time"
+
 	aa_dynamodb "github.com/aaronland/go-aws-dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/sfomuseum/go-offline"
 	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/awsdynamodb"
-	"io"
-	"net/url"
-	"time"
+	"gocloud.dev/docstore/awsdynamodb"	
 )
 
 type DocstoreDatabase struct {
