@@ -8,6 +8,7 @@ import (
 import (
 	"context"
 	"fmt"
+	"strings"
 	"strconv"
 
 	"github.com/sfomuseum/go-offline"
@@ -17,6 +18,16 @@ import (
 type PubSubQueue struct {
 	offline.Queue
 	publisher publisher.Publisher
+}
+
+func init() {
+
+	ctx := context.Background()
+	
+	for _, uri := range publisher.Schemes() {
+		scheme := strings.Replace(uri, "://", "", 1)
+		offline.RegisterQueue(ctx, scheme, NewPubSubQueue)
+	}
 }
 
 func NewPubSubQueue(ctx context.Context, uri string) (offline.Queue, error) {
