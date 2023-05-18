@@ -11,33 +11,24 @@ import (
 	"strconv"
 
 	"github.com/sfomuseum/go-offline"
-	"gocloud.dev/pubsub"	
+	"github.com/sfomuseum/go-pubsub/publisher"	
 )
 
 type PubSubQueue struct {
 	offline.Queue
-	topic *pubsub.Topic
-}
-
-func init() {
-
-	ctx := context.Background()
-
-	for _, scheme := range pubsub.DefaultURLMux().TopicSchemes() {
-		offline.RegisterQueue(ctx, scheme, NewPubSubQueue)
-	}
+	publisher publisher.Publisher
 }
 
 func NewPubSubQueue(ctx context.Context, uri string) (offline.Queue, error) {
 
-	t, err := pubsub.OpenTopic(ctx, uri)
+	p, err := publisher.NewPublisher(ctx, uri)
 
 	if err != nil {
-		return nil, fmt.Errorf("Failed to open topic, %w", err)
+		return nil, fmt.Errorf("Failed to create publisher, %w", err)
 	}
 
 	q := &PubSubQueue{
-		topic: t,
+		publisher: p,
 	}
 
 	return q, nil
@@ -47,14 +38,7 @@ func (q *PubSubQueue) ScheduleJob(ctx context.Context, job_id int64) error {
 
 	str_id := strconv.FormatInt(job_id, 10)
 
-	msg := &pubsub.Message{
-		Body:     []byte(str_id),
-		Metadata: map[string]string{
-			// "language":   "en",
-		},
-	}
-
-	err := q.topic.Send(ctx, msg)
+	err := q.publisher.Publish(ctx, str_id)
 
 	if err != nil {
 		return fmt.Errorf("Failed to send message, %w", err)
@@ -65,10 +49,10 @@ func (q *PubSubQueue) ScheduleJob(ctx context.Context, job_id int64) error {
 
 func (q *PubSubQueue) Close(ctx context.Context) error {
 
-	err := q.topic.Shutdown(ctx)
+	err := q.publisher.Close()
 
 	if err != nil {
-		return fmt.Errorf("Failed to shutdown topic, %w", err)
+		return fmt.Errorf("Failed to close publisher, %w", err)
 	}
 
 	return nil

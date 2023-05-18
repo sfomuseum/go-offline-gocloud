@@ -6,15 +6,16 @@ require (
 	github.com/aaronland/go-aws-dynamodb v0.0.5
 	github.com/aws/aws-sdk-go v1.44.263
 	github.com/sfomuseum/go-offline v0.0.10
+	github.com/sfomuseum/go-pubsub v0.0.10
 	gocloud.dev v0.29.0
 )
 
 require (
-	github.com/aaronland/go-aws-session v0.0.6 // indirect
+	github.com/aaronland/go-aws-session v0.1.0 // indirect
 	github.com/aaronland/go-http-sanitize v0.0.6 // indirect
 	github.com/aaronland/go-http-server v1.0.1 // indirect
 	github.com/aaronland/go-roster v1.0.0 // indirect
-	github.com/aaronland/go-string v0.1.2 // indirect
+	github.com/aaronland/go-string v1.0.0 // indirect
 	github.com/akrylysov/algnhsa v1.0.0 // indirect
 	github.com/aws/aws-lambda-go v1.37.0 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.17.4 // indirect
@@ -32,6 +33,9 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/sts v1.18.3 // indirect
 	github.com/aws/smithy-go v1.13.5 // indirect
 	github.com/bwmarrin/snowflake v0.3.0 // indirect
+	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/go-redis/redis/v8 v8.11.5 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/uuid v1.3.0 // indirect
