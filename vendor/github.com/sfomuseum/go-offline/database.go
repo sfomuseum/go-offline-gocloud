@@ -3,10 +3,11 @@ package offline
 import (
 	"context"
 	"fmt"
-	"github.com/aaronland/go-roster"
 	"net/url"
 	"sort"
 	"strings"
+
+	"github.com/aaronland/go-roster"
 )
 
 // type ListJobsCallback is a function type for custom processing of jobs.
@@ -27,6 +28,8 @@ type Database interface {
 	PruneJobs(context.Context, Status, int64) error
 	// List all of the `Jobs` in the database.
 	ListJobs(context.Context, ListJobsCallback) error
+	// Close closes any underlying database connections
+	Close(context.Context) error
 }
 
 var database_roster roster.Roster

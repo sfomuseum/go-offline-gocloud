@@ -4,9 +4,9 @@ go 1.18
 
 require (
 	github.com/aaronland/go-aws-dynamodb v0.0.5
-	github.com/aws/aws-sdk-go v1.44.263
-	github.com/sfomuseum/go-offline v0.0.10
-	github.com/sfomuseum/go-pubsub v0.0.10
+	github.com/aws/aws-sdk-go v1.44.268
+	github.com/sfomuseum/go-offline v0.0.11
+	github.com/sfomuseum/go-pubsub v0.0.11
 	gocloud.dev v0.29.0
 )
 

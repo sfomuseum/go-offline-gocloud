@@ -145,6 +145,13 @@ func TestPruneAndListJobs(t *testing.T) {
 	}
 
 	if count != 0 {
-		t.Fatalf("Expecte job count to be 0, not %d", count)
+		t.Fatalf("Expected job count to be 0, not %d", count)
 	}
+
+	err = db.Close(ctx)
+
+	if err != nil {
+		t.Fatalf("Failed to close collection, %v", err)
+	}
+	
 }

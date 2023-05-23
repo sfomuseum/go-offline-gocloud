@@ -26,7 +26,7 @@ github.com/aws/aws-lambda-go/lambda
 github.com/aws/aws-lambda-go/lambda/handlertrace
 github.com/aws/aws-lambda-go/lambda/messages
 github.com/aws/aws-lambda-go/lambdacontext
-# github.com/aws/aws-sdk-go v1.44.263
+# github.com/aws/aws-sdk-go v1.44.268
 ## explicit; go 1.11
 github.com/aws/aws-sdk-go/aws
 github.com/aws/aws-sdk-go/aws/awserr
@@ -222,7 +222,7 @@ github.com/sfomuseum/go-flags/multi
 # github.com/sfomuseum/go-http-auth v0.9.0
 ## explicit; go 1.18
 github.com/sfomuseum/go-http-auth
-# github.com/sfomuseum/go-offline v0.0.10
+# github.com/sfomuseum/go-offline v0.0.11
 ## explicit; go 1.18
 github.com/sfomuseum/go-offline
 github.com/sfomuseum/go-offline/app/job/add
@@ -230,7 +230,7 @@ github.com/sfomuseum/go-offline/app/job/get
 github.com/sfomuseum/go-offline/app/job/remove
 github.com/sfomuseum/go-offline/app/status/server
 github.com/sfomuseum/go-offline/http/api
-# github.com/sfomuseum/go-pubsub v0.0.10
+# github.com/sfomuseum/go-pubsub v0.0.11
 ## explicit; go 1.18
 github.com/sfomuseum/go-pubsub/publisher
 # github.com/whosonfirst/go-sanitize v0.1.0

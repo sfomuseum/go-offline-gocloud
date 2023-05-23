@@ -224,3 +224,7 @@ func (db *DocstoreDatabase) PruneJobs(ctx context.Context, status offline.Status
 	return nil
 
 }
+
+func (db *DocstoreDatabase) Close(ctx context.Context) error {
+	return db.collection.Close()
+}
