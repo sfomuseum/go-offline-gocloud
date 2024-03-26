@@ -23,8 +23,10 @@ type PubSubQueue struct {
 func init() {
 
 	ctx := context.Background()
+
+	publisher.RegisterGoCloudPublishers(ctx)
 	
-	for _, uri := range publisher.Schemes() {
+	for _, uri := range publisher.PublisherSchemes() {
 		scheme := strings.Replace(uri, "://", "", 1)
 		offline.RegisterQueue(ctx, scheme, NewPubSubQueue)
 	}

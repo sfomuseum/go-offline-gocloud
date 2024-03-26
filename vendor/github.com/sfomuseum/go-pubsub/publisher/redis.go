@@ -6,6 +6,7 @@ import (
 	"net/url"
 
 	"github.com/go-redis/redis/v8"
+	"github.com/sfomuseum/go-pubsub"
 )
 
 type RedisPublisher struct {
@@ -16,7 +17,11 @@ type RedisPublisher struct {
 
 func init() {
 	ctx := context.Background()
-	RegisterPublisher(ctx, "redis", NewRedisPublisher)
+	RegisterRedisPublishers(ctx)
+}
+
+func RegisterRedisPublishers(ctx context.Context) error {
+	return RegisterPublisher(ctx, "redis", NewRedisPublisher)
 }
 
 func NewRedisPublisher(ctx context.Context, uri string) (Publisher, error) {
@@ -27,13 +32,11 @@ func NewRedisPublisher(ctx context.Context, uri string) (Publisher, error) {
 		return nil, err
 	}
 
-	q := u.Query()
+	endpoint, channel, err := pubsub.RedisConfigFromURL(u)
 
-	host := q.Get("host")
-	port := q.Get("port")
-	channel := q.Get("channel")
-
-	endpoint := fmt.Sprintf("%s:%s", host, port)
+	if err != nil {
+		return nil, fmt.Errorf("Failed to derive Redis config from URI, %w", err)
+	}
 
 	client := redis.NewClient(&redis.Options{
 		Addr: endpoint,

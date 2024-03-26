@@ -1,6 +1,11 @@
 package gocloud
 
 import (
+	_ "gocloud.dev/pubsub/awssnssqs"
+	_ "gocloud.dev/pubsub/mempubsub"
+)
+
+import (
 	"context"
 	"testing"
 
