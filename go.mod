@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/aaronland/go-aws-dynamodb v0.0.7
-	github.com/aws/aws-sdk-go v1.51.8
+	github.com/aws/aws-sdk-go v1.51.12
 	github.com/sfomuseum/go-offline v0.0.14
 	github.com/sfomuseum/go-pubsub v0.0.15
 	gocloud.dev v0.37.0
