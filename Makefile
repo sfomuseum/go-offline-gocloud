@@ -17,7 +17,8 @@ debug-tables:
 debug-server:
 	go run cmd/job-server/main.go \
 		-offline-database-uri 'awsdynamodb://offlinejobs?partition_key=Id&local=true' \
-		-offline-queue-uri stdout:// \
+		-offline-queue-uri '*=stdout://' \
+		-offline-queue-uri 'null=null://' \
 		-authenticator-uri sharedsecret://s33kret
 
 lambda:

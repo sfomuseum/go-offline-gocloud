@@ -8,11 +8,11 @@ import (
 import (
 	"context"
 	"fmt"
-	"strings"
 	"strconv"
+	"strings"
 
 	"github.com/sfomuseum/go-offline"
-	"github.com/sfomuseum/go-pubsub/publisher"	
+	"github.com/sfomuseum/go-pubsub/publisher"
 )
 
 type PubSubQueue struct {
@@ -25,7 +25,7 @@ func init() {
 	ctx := context.Background()
 
 	publisher.RegisterGoCloudPublishers(ctx)
-	
+
 	for _, uri := range publisher.PublisherSchemes() {
 		scheme := strings.Replace(uri, "://", "", 1)
 		offline.RegisterQueue(ctx, scheme, NewPubSubQueue)

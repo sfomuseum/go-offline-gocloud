@@ -8,7 +8,7 @@ import (
 
 	"encoding/json"
 	"github.com/sfomuseum/go-offline"
-	_ "gocloud.dev/docstore/memdocstore"	
+	_ "gocloud.dev/docstore/memdocstore"
 )
 
 func TestDocstoreDatabase(t *testing.T) {
@@ -153,5 +153,5 @@ func TestPruneAndListJobs(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed to close collection, %v", err)
 	}
-	
+
 }

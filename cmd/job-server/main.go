@@ -8,8 +8,8 @@ import (
 	"context"
 	"log/slog"
 	"os"
-	
-	"github.com/sfomuseum/go-offline/app/server"	
+
+	"github.com/sfomuseum/go-offline/app/server"
 )
 
 func main() {

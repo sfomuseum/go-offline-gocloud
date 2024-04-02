@@ -6,7 +6,7 @@ import (
 	"log"
 
 	aa_dynamodb "github.com/aaronland/go-aws-dynamodb"
-	sfom_dynamodb "github.com/sfomuseum/go-offline-gocloud/dynamodb"	
+	sfom_dynamodb "github.com/sfomuseum/go-offline-gocloud/dynamodb"
 )
 
 func main() {

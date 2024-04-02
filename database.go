@@ -15,7 +15,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/sfomuseum/go-offline"
 	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/awsdynamodb"	
+	"gocloud.dev/docstore/awsdynamodb"
 )
 
 type DocstoreDatabase struct {
