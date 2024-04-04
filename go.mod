@@ -4,8 +4,8 @@ go 1.22
 
 require (
 	github.com/aaronland/go-aws-dynamodb v0.0.7
-	github.com/aws/aws-sdk-go v1.51.12
-	github.com/sfomuseum/go-offline v0.0.14
+	github.com/aws/aws-sdk-go v1.51.14
+	github.com/sfomuseum/go-offline v0.0.15
 	github.com/sfomuseum/go-pubsub v0.0.15
 	gocloud.dev v0.37.0
 )
@@ -45,7 +45,7 @@ require (
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/rs/cors v1.10.1 // indirect
 	github.com/sfomuseum/go-flags v0.10.0 // indirect
-	github.com/sfomuseum/go-http-auth v0.9.0 // indirect
+	github.com/sfomuseum/go-http-auth v0.11.0 // indirect
 	github.com/whosonfirst/go-sanitize v0.1.0 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/net v0.22.0 // indirect
