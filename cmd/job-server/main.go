@@ -6,18 +6,21 @@ import (
 
 import (
 	"context"
-	"github.com/sfomuseum/go-offline/app/status/server"
-	"log"
+	"log/slog"
+	"os"
+
+	"github.com/sfomuseum/go-offline/app/server"
 )
 
 func main() {
 
 	ctx := context.Background()
-	logger := log.Default()
+	logger := slog.Default()
 
 	err := server.Run(ctx, logger)
 
 	if err != nil {
-		logger.Fatalf("Failed to add job, %v", err)
+		logger.Error("Failed to add job", "error", err)
+		os.Exit(1)
 	}
 }

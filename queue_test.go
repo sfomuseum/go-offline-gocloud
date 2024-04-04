@@ -9,7 +9,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/sfomuseum/go-offline"	
+	"github.com/sfomuseum/go-offline"
 )
 
 func TestQueueJob(t *testing.T) {
