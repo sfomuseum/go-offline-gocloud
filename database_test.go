@@ -6,9 +6,10 @@ import (
 	"testing"
 	"time"
 
+	_ "gocloud.dev/docstore/memdocstore"
+
 	"encoding/json"
 	"github.com/sfomuseum/go-offline"
-	_ "gocloud.dev/docstore/memdocstore"
 )
 
 func TestDocstoreDatabase(t *testing.T) {
