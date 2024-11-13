@@ -1,21 +1,16 @@
 package gocloud
 
 import (
-	_ "gocloud.dev/docstore/memdocstore"
-)
-
-import (
 	"context"
 	"fmt"
 	"io"
-	"net/url"
 	"time"
 
-	aa_dynamodb "github.com/aaronland/go-aws-dynamodb"
-	"github.com/aws/aws-sdk-go/service/dynamodb"
+	_ "gocloud.dev/docstore/memdocstore"
+
+	aa_docstore "github.com/aaronland/gocloud-docstore"
 	"github.com/sfomuseum/go-offline"
 	"gocloud.dev/docstore"
-	"gocloud.dev/docstore/awsdynamodb"
 )
 
 type DocstoreDatabase struct {
@@ -28,68 +23,29 @@ func init() {
 	ctx := context.Background()
 
 	// See below
-	offline.RegisterDatabase(ctx, "awsdynamodb", NewDocstoreDatabase)
+	err := offline.RegisterDatabase(ctx, "awsdynamodb", NewDocstoreDatabase)
+
+	if err != nil {
+		panic(err)
+	}
 
 	for _, scheme := range docstore.DefaultURLMux().CollectionSchemes() {
-		offline.RegisterDatabase(ctx, scheme, NewDocstoreDatabase)
+
+		err = offline.RegisterDatabase(ctx, scheme, NewDocstoreDatabase)
+
+		if err != nil {
+			panic(err)
+		}
 	}
 }
 
 func NewDocstoreDatabase(ctx context.Context, uri string) (offline.Database, error) {
 
-	// START OF put me in a package or something
-
-	db_u, err := url.Parse(uri)
+	col, err := aa_docstore.OpenCollection(ctx, uri)
 
 	if err != nil {
-		return nil, fmt.Errorf("Failed to parse URI, %w", err)
+		return nil, fmt.Errorf("Failed to create collection, %w", err)
 	}
-
-	var col *docstore.Collection
-
-	if db_u.Scheme == "awsdynamodb" {
-
-		sess, err := aa_dynamodb.NewSessionWithURI(ctx, uri)
-
-		if err != nil {
-			return nil, fmt.Errorf("Failed to create session, %w", err)
-		}
-
-		// Connect local dynamodb using Golang
-		// https://gist.github.com/Tamal/02776c3e2db7eec73c001225ff52e827
-		// https://gocloud.dev/howto/docstore/#dynamodb-ctor
-
-		table := db_u.Host
-
-		db_q := db_u.Query()
-		partition_key := db_q.Get("partition_key")
-
-		opts := &awsdynamodb.Options{
-			AllowScans: true,
-			// RunQueryFallback: fallback_func,
-		}
-
-		// END OF necessary for order by created/lastupdate dates
-
-		db, err := awsdynamodb.OpenCollection(dynamodb.New(sess), table, partition_key, "", opts)
-
-		if err != nil {
-			return nil, fmt.Errorf("Failed to open collection, %w", err)
-		}
-
-		col = db
-	} else {
-
-		db, err := docstore.OpenCollection(ctx, uri)
-
-		if err != nil {
-			return nil, fmt.Errorf("Failed to create collection, %w", err)
-		}
-
-		col = db
-	}
-
-	// END OF put me in a package or something
 
 	db := &DocstoreDatabase{
 		collection: col,

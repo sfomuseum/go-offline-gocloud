@@ -1,13 +1,12 @@
 package main
 
 import (
-	_ "github.com/sfomuseum/go-offline-gocloud"
-)
-
-import (
 	"context"
-	"github.com/sfomuseum/go-offline/app/job/get"
 	"log"
+
+	_ "github.com/sfomuseum/go-offline-gocloud"
+
+	"github.com/sfomuseum/go-offline/app/job/get"
 )
 
 func main() {

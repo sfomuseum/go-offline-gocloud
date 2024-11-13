@@ -1,13 +1,11 @@
 package main
 
 import (
-	_ "github.com/sfomuseum/go-offline-gocloud"
-)
-
-import (
 	"context"
 	"log/slog"
 	"os"
+
+	_ "github.com/sfomuseum/go-offline-gocloud"
 
 	"github.com/sfomuseum/go-offline/app/server"
 )
