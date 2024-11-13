@@ -9,14 +9,14 @@ cli:
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/job-status-server cmd/job-status-server/main.go
 
 debug-add-job:
-	go run -mod $(GOMOD) cmd/add-job/main.go -instructions '{"hello":"world"}' -database-uri 'awsdynamodb://offlinejobs?partition_key=Id&local=true'
+	go run -mod $(GOMOD) cmd/add-job/main.go -instructions '{"hello":"world"}' -database-uri 'awsdynamodb://offlinejobs?partition_key=Id&local=true&region=localhost&credentials=anon:'
 
 debug-tables:
-	go run -mod $(GOMOD) cmd/create-dynamodb-tables/main.go -client-uri 'awsdynamodb://offlinejobs?local=true&partition_key=Id'
+	go run -mod $(GOMOD) cmd/create-dynamodb-tables/main.go -client-uri 'awsdynamodb://offlinejobs?partition_key=Id&local=true&region=localhost&credentials=anon:'
 
 debug-server:
 	go run cmd/job-server/main.go \
-		-offline-database-uri 'awsdynamodb://offlinejobs?partition_key=Id&local=true' \
+		-offline-database-uri 'awsdynamodb://offlinejobs?partition_key=Id&local=true&region=localhost&credentials=anon:' \
 		-offline-queue-uri '*=stdout://' \
 		-offline-queue-uri 'null=null://' \
 		-authenticator-uri sharedsecret://s33kret
