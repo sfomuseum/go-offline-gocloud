@@ -29,7 +29,15 @@ func init() {
 	}
 
 	for _, uri := range publisher.PublisherSchemes() {
+
 		scheme := strings.Replace(uri, "://", "", 1)
+
+		// Skip go-pubsub/null_publisher in favour of go-offline/null-queue
+
+		if scheme == "null" {
+			continue
+		}
+
 		err := offline.RegisterQueue(ctx, scheme, NewPubSubQueue)
 
 		if err != nil {
