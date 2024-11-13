@@ -6,6 +6,7 @@ replace github.com/hpcloud/tail v1.0.0 => github.com/sfomuseum/tail v1.0.2
 
 require (
 	github.com/aaronland/go-aws-dynamodb v0.4.1
+	github.com/aaronland/gocloud-docstore v0.0.8
 	github.com/aws/aws-sdk-go-v2 v1.32.4
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.36.5
 	github.com/sfomuseum/go-offline v0.0.17

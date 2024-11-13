@@ -18,7 +18,7 @@ func main() {
 
 	ctx := context.Background()
 
-	client, err := aa_dynamodb.NewClientWithURI(ctx, *client_uri)
+	client, err := aa_dynamodb.NewClient(ctx, *client_uri)
 
 	if err != nil {
 		log.Fatalf("Failed to create client, %v", err)
@@ -29,7 +29,7 @@ func main() {
 		Refresh: *refresh,
 	}
 
-	err = aa_dynamodb.CreateTables(client, table_opts)
+	err = aa_dynamodb.CreateTables(ctx, client, table_opts)
 
 	if err != nil {
 		log.Fatalf("Failed to create tables, %v", err)

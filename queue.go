@@ -1,15 +1,13 @@
 package gocloud
 
 import (
-	_ "gocloud.dev/pubsub/awssnssqs"
-	_ "gocloud.dev/pubsub/mempubsub"
-)
-
-import (
 	"context"
 	"fmt"
 	"strconv"
 	"strings"
+
+	_ "gocloud.dev/pubsub/awssnssqs"
+	_ "gocloud.dev/pubsub/mempubsub"
 
 	"github.com/sfomuseum/go-offline"
 	"github.com/sfomuseum/go-pubsub/publisher"
@@ -24,11 +22,19 @@ func init() {
 
 	ctx := context.Background()
 
-	publisher.RegisterGoCloudPublishers(ctx)
+	err := publisher.RegisterGoCloudPublishers(ctx)
+
+	if err != nil {
+		panic(err)
+	}
 
 	for _, uri := range publisher.PublisherSchemes() {
 		scheme := strings.Replace(uri, "://", "", 1)
-		offline.RegisterQueue(ctx, scheme, NewPubSubQueue)
+		err := offline.RegisterQueue(ctx, scheme, NewPubSubQueue)
+
+		if err != nil {
+			panic(err)
+		}
 	}
 }
 

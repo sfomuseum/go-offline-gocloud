@@ -6,7 +6,7 @@ import (
 
 	_ "github.com/sfomuseum/go-offline-gocloud"
 
-	"github.com/sfomuseum/go-offline/app/job/add"	
+	"github.com/sfomuseum/go-offline/app/job/add"
 )
 
 func main() {

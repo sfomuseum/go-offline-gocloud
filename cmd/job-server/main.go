@@ -6,7 +6,7 @@ import (
 	"os"
 
 	_ "github.com/sfomuseum/go-offline-gocloud"
-	
+
 	"github.com/sfomuseum/go-offline/app/server"
 )
 
