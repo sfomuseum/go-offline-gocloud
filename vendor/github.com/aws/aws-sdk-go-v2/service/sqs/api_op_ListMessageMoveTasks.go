@@ -13,14 +13,16 @@ import (
 
 // Gets the most recent message movement tasks (up to 10) under a specific source
 // queue.
-//   - This action is currently limited to supporting message redrive from
-//     dead-letter queues (DLQs) (https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html)
-//     only. In this context, the source queue is the dead-letter queue (DLQ), while
-//     the destination queue can be the original source queue (from which the messages
-//     were driven to the dead-letter-queue), or a custom destination queue.
-//   - Currently, only standard queues are supported.
+//
+//   - This action is currently limited to supporting message redrive from [dead-letter queues (DLQs)]only.
+//     In this context, the source queue is the dead-letter queue (DLQ), while the
+//     destination queue can be the original source queue (from which the messages were
+//     driven to the dead-letter-queue), or a custom destination queue.
+//
 //   - Only one active message movement task is supported per queue at any given
 //     time.
+//
+// [dead-letter queues (DLQs)]: https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html
 func (c *Client) ListMessageMoveTasks(ctx context.Context, params *ListMessageMoveTasksInput, optFns ...func(*Options)) (*ListMessageMoveTasksOutput, error) {
 	if params == nil {
 		params = &ListMessageMoveTasksInput{}
@@ -104,6 +106,9 @@ func (c *Client) addOperationListMessageMoveTasksMiddlewares(stack *middleware.S
 	if err = addRecordResponseTiming(stack); err != nil {
 		return err
 	}
+	if err = addSpanRetryLoop(stack, options); err != nil {
+		return err
+	}
 	if err = addClientUserAgent(stack, options); err != nil {
 		return err
 	}
@@ -114,6 +119,12 @@ func (c *Client) addOperationListMessageMoveTasksMiddlewares(stack *middleware.S
 		return err
 	}
 	if err = addSetLegacyContextSigningOptionsMiddleware(stack); err != nil {
+		return err
+	}
+	if err = addTimeOffsetBuild(stack, c); err != nil {
+		return err
+	}
+	if err = addUserAgentRetryMode(stack, options); err != nil {
 		return err
 	}
 	if err = addOpListMessageMoveTasksValidationMiddleware(stack); err != nil {
@@ -135,6 +146,18 @@ func (c *Client) addOperationListMessageMoveTasksMiddlewares(stack *middleware.S
 		return err
 	}
 	if err = addDisableHTTPSMiddleware(stack, options); err != nil {
+		return err
+	}
+	if err = addSpanInitializeStart(stack); err != nil {
+		return err
+	}
+	if err = addSpanInitializeEnd(stack); err != nil {
+		return err
+	}
+	if err = addSpanBuildRequestStart(stack); err != nil {
+		return err
+	}
+	if err = addSpanBuildRequestEnd(stack); err != nil {
 		return err
 	}
 	return nil

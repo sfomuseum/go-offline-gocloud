@@ -12,7 +12,7 @@ import (
 	"time"
 
 	aa_dynamodb "github.com/aaronland/go-aws-dynamodb"
-	"github.com/aws/aws-sdk-go/service/dynamodb"
+	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
 	"github.com/sfomuseum/go-offline"
 	"gocloud.dev/docstore"
 	"gocloud.dev/docstore/awsdynamodb"
