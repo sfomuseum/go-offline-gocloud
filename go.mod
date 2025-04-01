@@ -2,8 +2,6 @@ module github.com/sfomuseum/go-offline-gocloud
 
 go 1.24
 
-toolchain go1.24.0
-
 replace github.com/hpcloud/tail v1.0.0 => github.com/sfomuseum/tail v1.0.2
 
 require (
@@ -53,7 +51,7 @@ require (
 	github.com/google/wire v0.6.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.14.1 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
-	github.com/redis/go-redis/v9 v9.7.0 // indirect
+	github.com/redis/go-redis/v9 v9.7.3 // indirect
 	github.com/rs/cors v1.11.1 // indirect
 	github.com/sfomuseum/go-flags v0.10.0 // indirect
 	github.com/sfomuseum/go-http-auth v0.12.0 // indirect
