@@ -162,8 +162,8 @@ github.com/sfomuseum/go-flags v0.10.0 h1:1OC1ACxpWMsl3XQ9OeNVMQj7Zi2CzufP3Rym3mP
 github.com/sfomuseum/go-flags v0.10.0/go.mod h1:VXOnnX1/yxQpX2yiwHaBV6aCmhtszQOL5bL1/nNo3co=
 github.com/sfomuseum/go-http-auth v1.0.0 h1:jxKXwTI6JRn1eeeDdfp+HQKCaFlZjB1ICQugdyq5i1I=
 github.com/sfomuseum/go-http-auth v1.0.0/go.mod h1:8LrJRICTyW23oJb1Ef0mKyDkvxzMkptnKFLEroVm51Q=
-github.com/sfomuseum/go-offline v0.0.19 h1:KoaQAB1CaR65SAJyBhG04iO92kDLujf8qq3iQCkLo20=
-github.com/sfomuseum/go-offline v0.0.19/go.mod h1:lxQtDuFM0mBE9dayvw8C0pTkdJb4FaIs8oxp6ouQk6Q=
+github.com/sfomuseum/go-offline v0.0.20 h1:1I/9gEkLcbyDWeKRUJRWCtnwE9zTArEhC6xQZ0c5evA=
+github.com/sfomuseum/go-offline v0.0.20/go.mod h1:lxQtDuFM0mBE9dayvw8C0pTkdJb4FaIs8oxp6ouQk6Q=
 github.com/sfomuseum/go-pubsub v0.0.19 h1:owHHJeiIfk0uBLf6UEehz5OpSAt38TXOaN0Y/lCjDIA=
 github.com/sfomuseum/go-pubsub v0.0.19/go.mod h1:VGfFsgHVkEGeYPJ1OXA/bQcky0lznuk6Ard9pa3FKgs=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
