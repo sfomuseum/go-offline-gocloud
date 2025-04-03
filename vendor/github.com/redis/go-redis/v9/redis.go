@@ -41,7 +41,7 @@ type (
 )
 
 type hooksMixin struct {
-	hooksMu *sync.RWMutex
+	hooksMu *sync.Mutex
 
 	slice   []Hook
 	initial hooks
@@ -49,7 +49,7 @@ type hooksMixin struct {
 }
 
 func (hs *hooksMixin) initHooks(hooks hooks) {
-	hs.hooksMu = new(sync.RWMutex)
+	hs.hooksMu = new(sync.Mutex)
 	hs.initial = hooks
 	hs.chain()
 }
@@ -151,7 +151,7 @@ func (hs *hooksMixin) clone() hooksMixin {
 	clone := *hs
 	l := len(clone.slice)
 	clone.slice = clone.slice[:l:l]
-	clone.hooksMu = new(sync.RWMutex)
+	clone.hooksMu = new(sync.Mutex)
 	return clone
 }
 
@@ -176,14 +176,9 @@ func (hs *hooksMixin) withProcessPipelineHook(
 }
 
 func (hs *hooksMixin) dialHook(ctx context.Context, network, addr string) (net.Conn, error) {
-	// Access to hs.current is guarded by a read-only lock since it may be mutated by AddHook(...)
-	// while this dialer is concurrently accessed by the background connection pool population
-	// routine when MinIdleConns > 0.
-	hs.hooksMu.RLock()
-	current := hs.current
-	hs.hooksMu.RUnlock()
-
-	return current.dial(ctx, network, addr)
+	hs.hooksMu.Lock()
+	defer hs.hooksMu.Unlock()
+	return hs.current.dial(ctx, network, addr)
 }
 
 func (hs *hooksMixin) processHook(ctx context.Context, cmd Cmder) error {
@@ -350,7 +345,7 @@ func (c *baseClient) initConn(ctx context.Context, cn *pool.Conn) error {
 		return err
 	}
 
-	if !c.opt.DisableIdentity && !c.opt.DisableIndentity {
+	if !c.opt.DisableIndentity {
 		libName := ""
 		libVer := Version()
 		if c.opt.IdentitySuffix != "" {
@@ -359,11 +354,7 @@ func (c *baseClient) initConn(ctx context.Context, cn *pool.Conn) error {
 		p := conn.Pipeline()
 		p.ClientSetInfo(ctx, WithLibraryName(libName))
 		p.ClientSetInfo(ctx, WithLibraryVersion(libVer))
-		// Handle network errors (e.g. timeouts) in CLIENT SETINFO to avoid
-		// out of order responses later on.
-		if _, err = p.Exec(ctx); err != nil && !isRedisError(err) {
-			return err
-		}
+		_, _ = p.Exec(ctx)
 	}
 
 	if c.opt.OnConnect != nil {

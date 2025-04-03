@@ -9,7 +9,7 @@ require (
 	github.com/aaronland/gocloud-docstore v0.0.9
 	github.com/aws/aws-sdk-go-v2 v1.36.3
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.0
-	github.com/sfomuseum/go-offline v0.0.18
+	github.com/sfomuseum/go-offline v0.0.19
 	github.com/sfomuseum/go-pubsub v0.0.19
 	gocloud.dev v0.41.0
 )
@@ -51,10 +51,10 @@ require (
 	github.com/google/wire v0.6.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.14.1 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
-	github.com/redis/go-redis/v9 v9.7.3 // indirect
+	github.com/redis/go-redis/v9 v9.7.0 // indirect
 	github.com/rs/cors v1.11.1 // indirect
 	github.com/sfomuseum/go-flags v0.10.0 // indirect
-	github.com/sfomuseum/go-http-auth v0.12.0 // indirect
+	github.com/sfomuseum/go-http-auth v1.0.0 // indirect
 	github.com/whosonfirst/go-sanitize v0.1.0 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/net v0.38.0 // indirect
