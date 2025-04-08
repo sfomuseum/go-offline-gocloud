@@ -1,6 +1,6 @@
 module github.com/sfomuseum/go-offline-gocloud
 
-go 1.24
+go 1.24.2
 
 replace github.com/hpcloud/tail v1.0.0 => github.com/sfomuseum/tail v1.0.2
 
@@ -8,9 +8,9 @@ require (
 	github.com/aaronland/go-aws-dynamodb v0.4.2
 	github.com/aaronland/gocloud-docstore v0.0.9
 	github.com/aws/aws-sdk-go-v2 v1.36.3
-	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.0
-	github.com/sfomuseum/go-offline v0.0.20
-	github.com/sfomuseum/go-pubsub v0.0.19
+	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.1
+	github.com/sfomuseum/go-offline v0.1.0
+	github.com/sfomuseum/go-pubsub v0.0.20
 	gocloud.dev v0.41.0
 )
 
@@ -36,7 +36,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery v1.10.15 // indirect
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.12.15 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sns v1.34.2 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sqs v1.38.3 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sqs v1.38.4 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssm v1.58.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.25.2 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.30.0 // indirect

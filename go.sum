@@ -53,8 +53,8 @@ github.com/aws/aws-sdk-go-v2/internal/ini v1.8.3 h1:bIqFDwgGXXN1Kpp99pDOdKMTTb5d
 github.com/aws/aws-sdk-go-v2/internal/ini v1.8.3/go.mod h1:H5O/EsxDWyU+LP/V8i5sm8cxoZgc2fdNR9bxlOFrQTo=
 github.com/aws/aws-sdk-go-v2/service/cognitoidentity v1.27.5 h1:BH9f0H3Tl44iCofo/Vx+4LGfVJ/Ptjh3j/4cn25cU0E=
 github.com/aws/aws-sdk-go-v2/service/cognitoidentity v1.27.5/go.mod h1:JcmPakQKiVFzqrJFefuBFabERYm56bndwJqMHys0pEg=
-github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.0 h1:EJXx6zb+lOe/Do2bO0d0dwVnIRGoP5J5xZ0BTn3LbqM=
-github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.0/go.mod h1:yYaWRnVSPyAmexW5t7G3TcuYoalYfT+xQwzWsvtUQ7M=
+github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.1 h1:67oYHlAdIoWS65kdTKatf9o1eDNkR2wan6TlBdP3oe4=
+github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.1/go.mod h1:yYaWRnVSPyAmexW5t7G3TcuYoalYfT+xQwzWsvtUQ7M=
 github.com/aws/aws-sdk-go-v2/service/iam v1.37.4 h1:MrH2MJRzxPGXtavvL1JtDLFJzXN+4ObO090jzauqcPk=
 github.com/aws/aws-sdk-go-v2/service/iam v1.37.4/go.mod h1:WJARDpnEOhixhh41f+kTTr67y28OvjIUVht++rfcILY=
 github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding v1.12.3 h1:eAh2A4b5IzM/lum78bZ590jy36+d/aFLgKF/4Vd1xPE=
@@ -65,8 +65,8 @@ github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.12.15 h1:dM9/92u2
 github.com/aws/aws-sdk-go-v2/service/internal/presigned-url v1.12.15/go.mod h1:SwFBy2vjtA0vZbjjaFtfN045boopadnoVPhu4Fv66vY=
 github.com/aws/aws-sdk-go-v2/service/sns v1.34.2 h1:PajtbJ/5bEo6iUAIGMYnK8ljqg2F1h4mMCGh1acjN30=
 github.com/aws/aws-sdk-go-v2/service/sns v1.34.2/go.mod h1:PJtxxMdj747j8DeZENRTTYAz/lx/pADn/U0k7YNNiUY=
-github.com/aws/aws-sdk-go-v2/service/sqs v1.38.3 h1:j5BchjfDoS7K26vPdyJlyxBIIBGDflq3qjjJKBDlbcI=
-github.com/aws/aws-sdk-go-v2/service/sqs v1.38.3/go.mod h1:Bar4MrRxeqdn6XIh8JGfiXuFRmyrrsZNTJotxEJmWW0=
+github.com/aws/aws-sdk-go-v2/service/sqs v1.38.4 h1:rxG8LzVTNCOUppzbQAWfEEDJg4knmnH7zZGEnf7QOrs=
+github.com/aws/aws-sdk-go-v2/service/sqs v1.38.4/go.mod h1:Bar4MrRxeqdn6XIh8JGfiXuFRmyrrsZNTJotxEJmWW0=
 github.com/aws/aws-sdk-go-v2/service/ssm v1.58.0 h1:zQz6Q5uaC8s9734DV9UDAm2q1TEEfOvEejDBSulOapI=
 github.com/aws/aws-sdk-go-v2/service/ssm v1.58.0/go.mod h1:PUWUl5MDiYNQkUHN9Pyd9kgtA/YhbxnSnHP+yQqzrM8=
 github.com/aws/aws-sdk-go-v2/service/sso v1.25.2 h1:pdgODsAhGo4dvzC3JAG5Ce0PX8kWXrTZGx+jxADD+5E=
@@ -162,10 +162,10 @@ github.com/sfomuseum/go-flags v0.10.0 h1:1OC1ACxpWMsl3XQ9OeNVMQj7Zi2CzufP3Rym3mP
 github.com/sfomuseum/go-flags v0.10.0/go.mod h1:VXOnnX1/yxQpX2yiwHaBV6aCmhtszQOL5bL1/nNo3co=
 github.com/sfomuseum/go-http-auth v1.0.0 h1:jxKXwTI6JRn1eeeDdfp+HQKCaFlZjB1ICQugdyq5i1I=
 github.com/sfomuseum/go-http-auth v1.0.0/go.mod h1:8LrJRICTyW23oJb1Ef0mKyDkvxzMkptnKFLEroVm51Q=
-github.com/sfomuseum/go-offline v0.0.20 h1:1I/9gEkLcbyDWeKRUJRWCtnwE9zTArEhC6xQZ0c5evA=
-github.com/sfomuseum/go-offline v0.0.20/go.mod h1:lxQtDuFM0mBE9dayvw8C0pTkdJb4FaIs8oxp6ouQk6Q=
-github.com/sfomuseum/go-pubsub v0.0.19 h1:owHHJeiIfk0uBLf6UEehz5OpSAt38TXOaN0Y/lCjDIA=
-github.com/sfomuseum/go-pubsub v0.0.19/go.mod h1:VGfFsgHVkEGeYPJ1OXA/bQcky0lznuk6Ard9pa3FKgs=
+github.com/sfomuseum/go-offline v0.1.0 h1:Gg/9fibo6H5ondXwcT6TRo3pxsSV+v+A1NxXZK1lVH4=
+github.com/sfomuseum/go-offline v0.1.0/go.mod h1:lxQtDuFM0mBE9dayvw8C0pTkdJb4FaIs8oxp6ouQk6Q=
+github.com/sfomuseum/go-pubsub v0.0.20 h1:CEJnMhc/RBSwv3gJhOpWvvigIUODZwJrfF6kgqfbFFA=
+github.com/sfomuseum/go-pubsub v0.0.20/go.mod h1:TZ1jQiR7yEyIiC9Wf711+s3A1O84ywXpi+xKZxc+KZ4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.4.0/go.mod h1:YvHI0jy2hoMjB+UWwv71VJQ9isScKT/TqJzVSSt89Yw=
 github.com/stretchr/objx v0.5.0/go.mod h1:Yh+to48EsGEfYuaHDzXPcE3xhTkx73EhmCGUpEOglKo=

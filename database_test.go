@@ -24,6 +24,8 @@ func TestDocstoreDatabase(t *testing.T) {
 		t.Fatalf("Failed to create new database, %v", err)
 	}
 
+	job_type := "testing"
+
 	instructions := map[string]interface{}{
 		"name": "testing",
 		"id":   1234,
@@ -35,7 +37,7 @@ func TestDocstoreDatabase(t *testing.T) {
 		t.Fatalf("Failed to marshal instructions, %v", err)
 	}
 
-	job, err := offline.NewJob(ctx, "testing", string(enc_instructions))
+	job, err := offline.NewJob(ctx, "testing", job_type, string(enc_instructions))
 
 	if err != nil {
 		t.Fatalf("Failed to create new job, %v", err)
@@ -96,6 +98,8 @@ func TestPruneAndListJobs(t *testing.T) {
 		t.Fatalf("Failed to create new database, %v", err)
 	}
 
+	job_type := "testing"
+
 	instructions := map[string]interface{}{
 		"name": "testing",
 		"id":   1234,
@@ -109,7 +113,7 @@ func TestPruneAndListJobs(t *testing.T) {
 			t.Fatalf("Failed to marshal instructions, %v", err)
 		}
 
-		job, err := offline.NewJob(ctx, "testing", string(enc_instructions))
+		job, err := offline.NewJob(ctx, "testing", job_type, string(enc_instructions))
 
 		if err != nil {
 			t.Fatalf("Failed to create new job, %v", err)
