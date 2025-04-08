@@ -6,7 +6,7 @@ cli:
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/add-job cmd/add-job/main.go
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/get-job cmd/get-job/main.go
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/remove-job cmd/remove-job/main.go
-	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/job-status-server cmd/job-status-server/main.go
+	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/job-server cmd/job-server/main.go
 
 debug-add-job:
 	go run -mod $(GOMOD) cmd/add-job/main.go -instructions '{"hello":"world"}' -database-uri 'awsdynamodb://offlinejobs?partition_key=Id&local=true&region=localhost&credentials=anon:'
