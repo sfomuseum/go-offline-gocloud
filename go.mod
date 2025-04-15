@@ -8,8 +8,8 @@ require (
 	github.com/aaronland/go-aws-dynamodb v0.4.2
 	github.com/aaronland/gocloud-docstore v0.0.9
 	github.com/aws/aws-sdk-go-v2 v1.36.3
-	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.1
-	github.com/sfomuseum/go-offline v0.1.2
+	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.4
+	github.com/sfomuseum/go-offline v0.1.3
 	github.com/sfomuseum/go-pubsub v0.0.20
 	gocloud.dev v0.41.0
 )
