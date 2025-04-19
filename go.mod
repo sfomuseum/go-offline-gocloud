@@ -9,7 +9,7 @@ require (
 	github.com/aaronland/gocloud-docstore v0.0.9
 	github.com/aws/aws-sdk-go-v2 v1.36.3
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.42.4
-	github.com/sfomuseum/go-offline v0.1.4
+	github.com/sfomuseum/go-offline v0.1.5
 	github.com/sfomuseum/go-pubsub v0.0.20
 	gocloud.dev v0.41.0
 )
@@ -63,7 +63,7 @@ require (
 	github.com/redis/go-redis/v9 v9.7.3 // indirect
 	github.com/rs/cors v1.11.1 // indirect
 	github.com/sfomuseum/go-flags v0.10.0 // indirect
-	github.com/sfomuseum/go-http-auth v1.1.0 // indirect
+	github.com/sfomuseum/go-http-auth v1.1.1 // indirect
 	github.com/sfomuseum/runtimevar v1.3.0 // indirect
 	github.com/whosonfirst/go-ioutil v1.0.2 // indirect
 	github.com/whosonfirst/go-sanitize v0.1.0 // indirect
