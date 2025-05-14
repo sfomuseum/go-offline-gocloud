@@ -1,6 +1,8 @@
 GOMOD=$(shell test -f "go.work" && echo "readonly" || echo "vendor")
 LDFLAGS=-s -w
 
+DEBUG_SERVER_URI=http://localhost:8080
+
 cli:
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/create-dynamodb-tables cmd/create-dynamodb-tables/main.go
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/add-job cmd/add-job/main.go
@@ -16,6 +18,7 @@ debug-tables:
 
 debug-server:
 	go run cmd/job-server/main.go \
+		-server-uri $(DEBUG_SERVER_URI) \
 		-offline-database-uri 'awsdynamodb://offlinejobs?partition_key=Id&local=true&region=localhost&credentials=anon:' \
 		-offline-queue-uri '*=slog://' \
 		-offline-queue-uri 'null=null://' \
