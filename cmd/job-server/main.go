@@ -2,8 +2,7 @@ package main
 
 import (
 	"context"
-	"log/slog"
-	"os"
+	"log"
 
 	_ "github.com/sfomuseum/go-offline-gocloud"
 
@@ -13,12 +12,9 @@ import (
 func main() {
 
 	ctx := context.Background()
-	logger := slog.Default()
-
-	err := server.Run(ctx, logger)
+	err := server.Run(ctx)
 
 	if err != nil {
-		logger.Error("Failed to add job", "error", err)
-		os.Exit(1)
+		log.Fatalf("Failed to run job server, %v", err)
 	}
 }

@@ -209,7 +209,7 @@ github.com/aws/aws-sdk-go-v2/service/s3/types
 github.com/aws/aws-sdk-go-v2/service/sns
 github.com/aws/aws-sdk-go-v2/service/sns/internal/endpoints
 github.com/aws/aws-sdk-go-v2/service/sns/types
-# github.com/aws/aws-sdk-go-v2/service/sqs v1.38.4
+# github.com/aws/aws-sdk-go-v2/service/sqs v1.38.5
 ## explicit; go 1.22
 github.com/aws/aws-sdk-go-v2/service/sqs
 github.com/aws/aws-sdk-go-v2/service/sqs/internal/endpoints
@@ -301,7 +301,7 @@ github.com/googleapis/gax-go/v2/internal
 # github.com/jmespath/go-jmespath v0.4.0
 ## explicit; go 1.14
 github.com/jmespath/go-jmespath
-# github.com/redis/go-redis/v9 v9.7.3
+# github.com/redis/go-redis/v9 v9.8.0
 ## explicit; go 1.18
 github.com/redis/go-redis/v9
 github.com/redis/go-redis/v9/internal
@@ -322,16 +322,17 @@ github.com/sfomuseum/go-flags/multi
 # github.com/sfomuseum/go-http-auth v1.2.0
 ## explicit; go 1.24
 github.com/sfomuseum/go-http-auth
-# github.com/sfomuseum/go-offline v0.1.6
+# github.com/sfomuseum/go-offline v0.2.0
 ## explicit; go 1.24
 github.com/sfomuseum/go-offline
 github.com/sfomuseum/go-offline/app/job/add
 github.com/sfomuseum/go-offline/app/job/get
 github.com/sfomuseum/go-offline/app/job/remove
+github.com/sfomuseum/go-offline/app/job/schedule
 github.com/sfomuseum/go-offline/app/server
 github.com/sfomuseum/go-offline/http
 github.com/sfomuseum/go-offline/http/api
-# github.com/sfomuseum/go-pubsub v0.0.20
+# github.com/sfomuseum/go-pubsub v0.0.21
 ## explicit; go 1.24.2
 github.com/sfomuseum/go-pubsub
 github.com/sfomuseum/go-pubsub/publisher
