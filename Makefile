@@ -8,6 +8,7 @@ cli:
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/add-job cmd/add-job/main.go
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/get-job cmd/get-job/main.go
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/remove-job cmd/remove-job/main.go
+	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/schedule-job cmd/schedule-job/main.go
 	go build -mod $(GOMOD) -ldflags="$(LDFLAGS)" -o bin/job-server cmd/job-server/main.go
 
 debug-add-job:

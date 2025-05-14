@@ -9,8 +9,8 @@ require (
 	github.com/aaronland/gocloud-docstore v0.0.9
 	github.com/aws/aws-sdk-go-v2 v1.36.3
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.43.1
-	github.com/sfomuseum/go-offline v0.1.6
-	github.com/sfomuseum/go-pubsub v0.0.20
+	github.com/sfomuseum/go-offline v0.2.0
+	github.com/sfomuseum/go-pubsub v0.0.21
 	gocloud.dev v0.41.0
 )
 
@@ -43,7 +43,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/internal/s3shared v1.18.15 // indirect
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.79.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sns v1.34.2 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sqs v1.38.4 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sqs v1.38.5 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssm v1.58.0 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.25.2 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.30.0 // indirect
@@ -60,7 +60,7 @@ require (
 	github.com/google/wire v0.6.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.14.1 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
-	github.com/redis/go-redis/v9 v9.7.3 // indirect
+	github.com/redis/go-redis/v9 v9.8.0 // indirect
 	github.com/rs/cors v1.11.1 // indirect
 	github.com/sfomuseum/go-flags v0.10.0 // indirect
 	github.com/sfomuseum/go-http-auth v1.2.0 // indirect
