@@ -15,6 +15,6 @@ func main() {
 	err := get.Run(ctx)
 
 	if err != nil {
-		log.Fatalf("Failed to add job, %v", err)
+		log.Fatalf("Failed to get job, %v", err)
 	}
 }
