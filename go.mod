@@ -10,12 +10,11 @@ require (
 	github.com/aws/aws-sdk-go-v2 v1.39.1
 	github.com/aws/aws-sdk-go-v2/service/dynamodb v1.50.4
 	github.com/sfomuseum/go-offline v0.3.2
-	github.com/sfomuseum/go-pubsub v0.0.22
+	github.com/sfomuseum/go-pubsub v0.0.23
 	gocloud.dev v0.43.0
 )
 
 require (
-	github.com/aaronland/go-aws-auth/v2 v2.0.1 // indirect
 	github.com/aaronland/go-http/v3 v3.2.0 // indirect
 	github.com/aaronland/go-roster v1.0.0 // indirect
 	github.com/akrylysov/algnhsa v1.1.0 // indirect
@@ -42,7 +41,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/internal/s3shared v1.19.7 // indirect
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.88.1 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sns v1.34.7 // indirect
-	github.com/aws/aws-sdk-go-v2/service/sqs v1.38.9 // indirect
+	github.com/aws/aws-sdk-go-v2/service/sqs v1.42.7 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssm v1.64.4 // indirect
 	github.com/aws/aws-sdk-go-v2/service/sso v1.29.3 // indirect
 	github.com/aws/aws-sdk-go-v2/service/ssooidc v1.34.4 // indirect
@@ -60,7 +59,7 @@ require (
 	github.com/google/wire v0.6.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.15.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
-	github.com/redis/go-redis/v9 v9.11.0 // indirect
+	github.com/redis/go-redis/v9 v9.14.0 // indirect
 	github.com/rs/cors v1.11.1 // indirect
 	github.com/sfomuseum/go-flags v0.11.0 // indirect
 	github.com/tidwall/gjson v1.18.0 // indirect

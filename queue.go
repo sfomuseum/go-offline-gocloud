@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"strconv"
-	"strings"
 
 	_ "gocloud.dev/pubsub/awssnssqs"
 	_ "gocloud.dev/pubsub/mempubsub"
@@ -16,34 +15,6 @@ import (
 type PubSubQueue struct {
 	offline.Queue
 	publisher publisher.Publisher
-}
-
-func init() {
-
-	ctx := context.Background()
-
-	err := publisher.RegisterGoCloudPublishers(ctx)
-
-	if err != nil {
-		panic(err)
-	}
-
-	for _, uri := range publisher.PublisherSchemes() {
-
-		scheme := strings.Replace(uri, "://", "", 1)
-
-		// Skip go-pubsub/null_publisher in favour of go-offline/null-queue
-
-		if scheme == "null" {
-			continue
-		}
-
-		err := offline.RegisterQueue(ctx, scheme, NewPubSubQueue)
-
-		if err != nil {
-			panic(err)
-		}
-	}
 }
 
 func NewPubSubQueue(ctx context.Context, uri string) (offline.Queue, error) {

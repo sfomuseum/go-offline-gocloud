@@ -18,27 +18,6 @@ type DocstoreDatabase struct {
 	collection *docstore.Collection
 }
 
-func init() {
-
-	ctx := context.Background()
-
-	// See below
-	err := offline.RegisterDatabase(ctx, "awsdynamodb", NewDocstoreDatabase)
-
-	if err != nil {
-		panic(err)
-	}
-
-	for _, scheme := range docstore.DefaultURLMux().CollectionSchemes() {
-
-		err = offline.RegisterDatabase(ctx, scheme, NewDocstoreDatabase)
-
-		if err != nil {
-			panic(err)
-		}
-	}
-}
-
 func NewDocstoreDatabase(ctx context.Context, uri string) (offline.Database, error) {
 
 	col, err := aa_docstore.OpenCollection(ctx, uri)
