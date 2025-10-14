@@ -2,11 +2,10 @@
 
 Go package implementing the `sfomuseum/go-offline` interfaces using the Go Cloud abstraction libraries.
 
-_Work in progress._
 
-## Documentation
+## Deprecation notice
 
-Documentation is incomplete at this time.
+This package has been deprecated and will no longer be updated. Its functionality has been moved in to the [sfomuseum/go-offline](https://github.com/sfomuseum/go-offline) package.
 
 ## See also
 
